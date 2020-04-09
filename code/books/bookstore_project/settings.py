@@ -15,7 +15,6 @@ DEBUG = int(os.environ.get('DEBUG', default=0))
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,7 +51,8 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -146,3 +146,5 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 # Django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
