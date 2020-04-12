@@ -159,3 +159,6 @@ DEFAULT_FROM_EMAIL = 'admin@djangobookstore.com'
 import socket
 hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
 INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+
+ENVIRONMENT = os.environ.get('ENVIRONMENT', default='production')
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
